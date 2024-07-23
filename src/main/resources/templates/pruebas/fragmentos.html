@@ -155,6 +155,31 @@
                 </div>
             </div>
         </section> 
+        <section th:fragment="filtroExistencias" class="bg-light">
+            <div class="row py-2">
+                <div class="col-md-3 offset-md-3">
+                    <form method="POST" th:action="@{/pruebas/query4}" class="was-validated">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label for="existenciasInf">[[#{pruebas.existencias.inferior}]]</label>
+                                    <input type="number" class="form-control" th:value="${existenciasInf}" th:name="existenciasInf" required="true" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="existenciasSup">[[#{pruebas.existencias.superior}]]</label>
+                                    <input type="number" class="form-control" th:value="${existenciasSup}" th:name="existenciasSup" required="true" />
+                                </div>
+                            </div>
+                            <div class="card-footer text-center">
+                                <button type="submit" class="btn btn-success">
+                                    <i class="fas fa-check"></i> [[#{pruebas.filtro.existencias}]]
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+        </div>
+    </div>
+</section>
 
 
 </body>

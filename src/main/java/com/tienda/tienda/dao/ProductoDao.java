@@ -18,4 +18,7 @@ public List<Producto> findByDescripcionContainingIgnoreCase(String texto);
     @Query(nativeQuery=true,
             value="SELECT * FROM producto where producto.precio BETWEEN :precioInf AND :precioSup ORDER BY producto.descripcion ASC")
     public List<Producto> metodoNativo(@Param("precioInf") double precioInf, @Param("precioSup") double precioSup); 
+    @Query(value="SELECT p FROM Producto p WHERE p.existencias BETWEEN :existenciasInf AND :existenciasSup ORDER BY p.descripcion ASC")
+    public List<Producto> findByExistenciasBetweenOrderByDescripcion(@Param("existenciasInf") int existenciasInf, @Param("existenciasSup") int existenciasSup);
 }
+
